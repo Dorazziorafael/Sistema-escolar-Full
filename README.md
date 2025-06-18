@@ -54,5 +54,6 @@ npm start
 ### 3.FRONTEND
 
 npm install
+
 npm start
 
