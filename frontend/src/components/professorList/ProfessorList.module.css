@@ -1,0 +1,52 @@
+
+.listContainer {
+  padding: 30px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #fcfcfc; /* Fundo ligeiramente diferente */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.professorList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.professorItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  margin-bottom: 8px; /* Espaço entre os itens da lista */
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.professorItem:last-child {
+  border-bottom: none;
+}
+
+.professorItem:hover {
+  transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.itemDetails {
+  text-align: left;
+  flex-grow: 1;
+  color: #444;
+}
+
+.itemDetails strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 15px; 
+}

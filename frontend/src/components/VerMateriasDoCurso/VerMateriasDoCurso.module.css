@@ -1,0 +1,194 @@
+/* frontend/src/components/VerMateriasDoCurso/VerMateriasDoCurso.module.css */
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.container h2 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.container h4 {
+    color: #0056b3;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.errorMessage {
+    color: #d9534f;
+    background-color: #fdd;
+    border: 1px solid #d9534f;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Seção de formulário */
+.formSection {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.inputField {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    min-width: 180px;
+    box-sizing: border-box;
+}
+
+.inputField:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Estilos de Botão - Base */
+.button {
+    padding: 12px 25px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Aplica os efeitos de hover e disabled para todos os botões que usam a classe .button */
+.button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Botão Primário (Verde para "Criar e Vincular") */
+.primaryButton {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px; 
+    font-size: 1.1em; 
+    border-radius: 10px; 
+}
+
+.primaryButton:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+/* Botão de Remover (Vermelho) */
+.removeButton {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+    padding: 8px 15px; 
+    border-radius: 5px; 
+}
+
+.removeButton:hover:not(:disabled) {
+    background-color: #c82333;
+}
+
+/* Botão de Voltar (Cinza) */
+.backButton {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 25px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 30px; 
+    font-size: 1.1em; 
+    border-radius: 10px; 
+}
+
+.backButton:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+/* Seção da tabela */
+.tableSection {
+    overflow-x: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.table th, .table td {
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.95em;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.table tr:hover {
+    background-color: #e6f7ff;
+}
+
+.noMateriasMessage {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.loadingMessage {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    padding: 50px 0;
+}

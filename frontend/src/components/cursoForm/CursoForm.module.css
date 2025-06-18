@@ -1,0 +1,149 @@
+/* frontend/src/components/cursoForm/CursoForm.module.css */
+
+/* Container principal do formulário */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px; /* Mantém o padrão de 8px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Mantém o padrão */
+    max-width: 500px; /* Adapta a largura máxima para 500px, como no formulário de alunos */
+    margin: 30px auto; /* Centraliza o formulário e adiciona espaçamento */
+}
+
+/* Título do formulário */
+.container h2 {
+    text-align: center;
+    color: #333; /* Cor consistente com o aluno */
+    margin-bottom: 25px;
+    font-size: 1.8em; /* Tamanho consistente */
+}
+
+/* Estilo geral do formulário */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os campos, consistente com o formulário de alunos */
+}
+
+/* Grupo de formulário (label + input) */
+.formGroup { /* Mantém o nome .formGroup no HTML, mas adota os estilos do seu .formLabel */
+    display: flex;
+    flex-direction: column;
+    font-weight: bold; /* Traz para cá o font-weight do formLabel */
+    color: #555; /* Traz para cá a cor do formLabel */
+    font-size: 0.95em; /* Traz para cá o font-size do formLabel */
+}
+
+/* Estilo dos inputs de texto, email, number */
+.input, /* Antigo .input */
+.textarea { /* Antigo .textarea */
+    padding: 10px 12px; /* Padding consistente com .formInput */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Arredondamento de borda consistente */
+    font-size: 1em;
+    margin-top: 5px; /* Espaçamento do label, consistente */
+    box-sizing: border-box;
+}
+
+/* Estilo de foco (mais parecido com o do aluno) */
+.input:focus,
+.textarea:focus {
+    border-color: #007bff; /* Cor da borda consistente */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Box-shadow de foco consistente */
+}
+
+.textarea {
+    resize: vertical;
+}
+
+/* NOVO: Grupo para os botões - AGORA IGUAL AO ALUNO */
+.buttonGroup {
+    display: flex;
+    justify-content: space-between; /* AGORA space-between para dividir os botões */
+    margin-top: 20px;
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+/* Botão de submit (Cadastrar Curso) - AGORA IGUAL AO ALUNO */
+.submitButton { /* Mantém o nome .submitButton no HTML, mas adota os estilos de .formButton */
+    background-color: #28a745; /* Verde para sucesso */
+    color: white;
+    padding: 12px 20px; /* Igual ao do aluno */
+    border: none;
+    border-radius: 5px; /* Igual ao do aluno */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transição sem transform para ser como o do aluno */
+    flex-grow: 1; /* Para os botões ocuparem espaço igual, como no aluno */
+}
+
+.submitButton:hover:not(:disabled) {
+    background-color: #218838;
+    /* REMOVIDO: transform: translateY(-2px); para ser igual ao aluno */
+}
+
+.submitButton:active {
+    background-color: #1e7e34;
+    /* REMOVIDO: transform: translateY(0); para ser igual ao aluno */
+}
+
+.submitButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Estilo para o botão Voltar - AGORA IGUAL AO ALUNO */
+.backButton { /* NOVO ESTILO */
+    background-color: #6c757d; /* Cinza para "Voltar" */
+    color: white;
+    padding: 12px 20px; /* Igual ao do aluno */
+    border: none;
+    border-radius: 5px; /* Igual ao do aluno */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transição sem transform para ser como o do aluno */
+    flex-grow: 1; /* Para os botões ocuparem espaço igual, como no aluno */
+}
+
+.backButton:hover:not(:disabled) {
+    background-color: #5a6268;
+    /* REMOVIDO: transform: translateY(-2px); para ser igual ao aluno */
+}
+
+.backButton:active {
+    background-color: #5a6268; /* Pode ser o mesmo do hover ou um pouco mais escuro */
+    /* REMOVIDO: transform: translateY(0); para ser igual ao aluno */
+}
+
+.backButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Mensagens de sucesso/erro (se estivessem neste arquivo) */
+/*
+.successMessage {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.errorMessage {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+}
+*/

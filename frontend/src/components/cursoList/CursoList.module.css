@@ -1,0 +1,58 @@
+/* Container principal da lista */
+.listContainer {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1300px; /* Largura maior para a lista */
+    width: 100%;
+    margin: 30px auto;
+}
+
+/* Título da lista */
+.listContainer h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+/* Lista de cursos (<ul>) */
+.cursoList {
+    list-style: none; /* Remove marcadores de lista padrão */
+    padding: 0;
+    margin: 0;
+}
+
+/* Item individual do curso (<li>) */
+.cursoItem {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between; /* Alinha detalhes à esquerda, ações à direita */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Detalhes do item (div que contém nome, carga horária, etc.) */
+.itemDetails {
+    flex-grow: 1; /* Ocupa o máximo de espaço possível */
+    color: #444;
+    line-height: 1.6;
+}
+
+.itemDetails strong {
+    color: #333;
+}
+
+/* Container para botões de ação */
+.actions {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+    margin-left: 20px; /* Espaçamento da esquerda para separar dos detalhes */
+}
+
+/* (Os estilos para botões 'deleteButton' e 'button' virão do App.module.css) */

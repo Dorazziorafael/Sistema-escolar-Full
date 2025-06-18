@@ -1,0 +1,145 @@
+/* frontend/src/components/professorForm/ProfessorForm.module.css */
+
+/* Container principal do formulário */
+.container { /* Renomeado de .formContainer para .container */
+    background-color: #ffffff;
+    padding: 30px; /* Consistente com o CursoForm */
+    border-radius: 8px; /* Consistente com o CursoForm */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistente com o CursoForm */
+    max-width: 500px; /* Consistente com o CursoForm (e AlunoForm) */
+    margin: 30px auto;
+    /* font-family: 'Arial', sans-serif; - Pode ser definido globalmente em App.css */
+}
+
+/* Título do formulário */
+.container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+/* Estilo geral do formulário (Adicionando a classe .form se seu JSX usa um div para o form) */
+.form { /* Adicionado para consistência, se seu JSX de ProfessorForm usa <form className={formStyles.form}> */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Consistente com o CursoForm */
+}
+
+/* Grupo de formulário (label + input) */
+.formGroup { /* Mantém o nome .formGroup no HTML */
+    display: flex;
+    flex-direction: column;
+    font-weight: bold; /* Traz para cá o font-weight do label */
+    color: #555; /* Traz para cá a cor do label */
+    font-size: 0.95em; /* Traz para cá o font-size do label */
+    /* margin-bottom foi movido para o gap do .form */
+}
+
+
+/* Inputs de texto, email, number */
+.input {
+    padding: 10px 12px; /* Consistente com CursoForm/AlunoForm */
+    border: 1px solid #ccc; /* Consistente com CursoForm/AlunoForm (era #ddd) */
+    border-radius: 4px; /* Consistente com CursoForm/AlunoForm */
+    font-size: 1em;
+    margin-top: 5px; /* Consistente com CursoForm/AlunoForm */
+    width: 100%; /* Garante que o input ocupa toda a largura disponível */
+    box-sizing: border-box;
+}
+
+.input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Consistente com CursoForm/AlunoForm */
+}
+
+/* Grupo para os botões (se houver mais de um) */
+.buttonGroup { /* Novo, para consistência com CursoForm/AlunoForm */
+    display: flex;
+    justify-content: space-between; /* Espaço entre os botões */
+    margin-top: 20px;
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+/* Botão de submit (Cadastrar Professor) */
+.submitButton {
+    background-color: #28a745; /* Verde para sucesso */
+    color: white;
+    padding: 12px 20px; /* Consistente com CursoForm/AlunoForm */
+    border: none;
+    border-radius: 5px; /* Consistente com CursoForm/AlunoForm */
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    flex-grow: 1; /* Para o botão ocupar espaço, como nos outros formulários */
+    /* margin-top: 15px; - Será gerenciado pelo .buttonGroup */
+    /* width: 100%; - Será gerenciado pelo flex-grow */
+}
+
+.submitButton:hover:not(:disabled) { /* Adicionado :not(:disabled) para melhor UX */
+    background-color: #218838;
+}
+
+.submitButton:active {
+    background-color: #1e7e34;
+}
+
+.submitButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Botão de voltar (se for adicionar um) */
+.backButton { /* Novo, para consistência com CursoForm/AlunoForm */
+    background-color: #6c757d; /* Cinza para "Voltar" */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    flex-grow: 1; /* Para os botões ocuparem espaço igual */
+}
+
+.backButton:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+.backButton:active {
+    background-color: #5a6268;
+}
+
+.backButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+/* As mensagens de sucesso e erro geralmente vêm de um App.module.css global */
+/*
+.successMessage {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 1px solid #c3e6cb;
+    text-align: center;
+}
+
+.errorMessage {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    border: 1px solid #f5c6cb;
+    text-align: center;
+}
+*/

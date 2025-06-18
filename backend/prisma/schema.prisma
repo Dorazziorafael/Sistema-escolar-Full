@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Aluno {
+  id_aluno            Int          @id @default(autoincrement())
+  nome_aluno          String
+  data_nascimento     DateTime     @db.Date
+  matricula           String       @unique
+  semestre            Int          @default(1)
+  email               String       @unique
+  cursos_matriculados AlunoCurso[] @relation("AlunoToAlunoCurso")
+
+  @@map("alunos")
+}
+
+model Curso {
+  id_curso             Int              @id @default(autoincrement())
+  nome_curso           String           @unique // Adicionei @unique aqui também, se for o caso
+  carga_horaria        Int              // Adicione esta linha de volta
+  numero_semestres     Int?
+  descricao            String?
+  alunos_matriculados  AlunoCurso[]     @relation("CursoToAlunoCurso")
+  materias_oferecidas  CursoMateria[]   @relation("CursoToCursoMateria")
+  professores_do_curso ProfessorCurso[] @relation("CursoToProfessorCurso")
+
+  @@map("cursos")
+}
+
+model Professor {
+  id_professor         Int                @id @default(autoincrement())
+  nome_professor       String
+  formacao             String?
+  email                String             @unique
+  cursos_ministrados   ProfessorCurso[]   @relation("ProfessorToProfessorCurso")
+  materias_ministradas ProfessorMateria[] @relation("ProfessorToProfessorMateria")
+
+  @@map("professores")
+}
+
+model Materia {
+  id_materia             Int                @id @default(autoincrement())
+  nome_materia           String
+  creditos               Int
+  cursos_que_oferecem    CursoMateria[]     @relation("MateriaToCursoMateria")
+  professores_da_materia ProfessorMateria[] @relation("MateriaToProfessorMateria")
+
+  @@map("materias")
+}
+
+model AlunoCurso {
+  aluno_id         Int
+  curso_id         Int
+  data_matricula   DateTime @default(now()) @db.Timestamptz(6)
+  status_matricula String   @default("Ativo")
+  aluno            Aluno    @relation("AlunoToAlunoCurso", fields: [aluno_id], references: [id_aluno], onDelete: Cascade)
+  curso            Curso    @relation("CursoToAlunoCurso", fields: [curso_id], references: [id_curso], onDelete: Cascade)
+
+  @@id([aluno_id, curso_id])
+  @@map("alunos_cursos")
+}
+
+model CursoMateria {
+  curso_id   Int
+  materia_id Int
+  curso      Curso   @relation("CursoToCursoMateria", fields: [curso_id], references: [id_curso], onDelete: Cascade)
+  materia    Materia @relation("MateriaToCursoMateria", fields: [materia_id], references: [id_materia], onDelete: Cascade)
+
+  @@id([curso_id, materia_id])
+  @@map("cursos_materias")
+}
+
+model ProfessorCurso {
+  professor_id Int
+  curso_id     Int
+  curso        Curso     @relation("CursoToProfessorCurso", fields: [curso_id], references: [id_curso], onDelete: Cascade)
+  professor    Professor @relation("ProfessorToProfessorCurso", fields: [professor_id], references: [id_professor], onDelete: Cascade)
+
+  @@id([professor_id, curso_id])
+  @@map("professores_cursos")
+}
+
+model ProfessorMateria {
+  professor_id Int
+  materia_id   Int
+  materia      Materia   @relation("MateriaToProfessorMateria", fields: [materia_id], references: [id_materia], onDelete: Cascade)
+  professor    Professor @relation("ProfessorToProfessorMateria", fields: [professor_id], references: [id_professor], onDelete: Cascade)
+
+  @@id([professor_id, materia_id])
+  @@map("professores_materias")
+}
