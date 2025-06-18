@@ -48,6 +48,7 @@ npm install
 # Crie um arquivo .env com sua DATABASE_URL do Neon/PostgreSQL:
 # DATABASE_URL="postgresql://USUARIO:SENHA@HOST:PORTA/BANCO?schema=public"
 npx prisma migrate dev --name init
+
 npm start
 
 ### 3.FRONTEND
