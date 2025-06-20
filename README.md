@@ -1,10 +1,10 @@
-# 📚 Sistema de Gerenciamento Acadêmico: Meu Estudo Fullstack com React
+# Sistema de Gerenciamento Acadêmico: Meu Estudo Fullstack com React
 
 Olá! Este projeto é o resultado do meu aprendizado prático em desenvolvimento Fullstack porem ainda há muito a aprender e implementar dentro desse proprio sistema. Criei um sistema básico de gerenciamento acadêmico para solidificar meus conhecimentos em React.js e dominar as operações CRUD (Criar, Ler, Atualizar, Deletar).
 
 Foi uma jornada para entender a comunicação entre frontend e backend em tempo real.
 
-## 🚀 Meu Propósito com Este Projeto
+##  Meu Propósito com Este Projeto
 
 Meu principal objetivo foi:
 
@@ -13,7 +13,7 @@ Meu principal objetivo foi:
 * **Explorar o Fullstack:** Conectei o frontend React a um backend Node.js, compreendendo o fluxo de requisições e respostas em uma API RESTful.
 * **Organização de Código:** Apliquei boas práticas para manter o código limpo e fácil de entender.
 
-## ✨ Funcionalidades Principais
+##  Funcionalidades Principais
 
 O sistema permite gerenciar:
 
@@ -22,7 +22,7 @@ O sistema permite gerenciar:
 * **Alunos:** Cadastro, listagem, exclusão e matrícula em cursos.
 * **Feedback:** Mensagens de sucesso e erro aparecem para guiar o usuário após cada ação.
 
-## 🛠️ As Tecnologias Usadas
+##  As Tecnologias Usadas
 
 Para construir este projeto, utilizei:
 
@@ -39,7 +39,7 @@ Para construir este projeto, utilizei:
 * PostgreSQL (via Neon Tech)
 * Prisma ORM
 
-## 📦 Como Rodar Localmente
+## Como Rodar Localmente
 
 ### 1. Obtenha o Código
 
