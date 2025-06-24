@@ -112,9 +112,7 @@ router.put('/:id', async (req, res) => {
     // Se a data_nascimento for fornecida (não undefined)
     if (data_nascimento !== undefined) {
         if (data_nascimento === null || data_nascimento === '') {
-            // Se for null ou string vazia, e o campo permite null no schema, envie null.
-            // No seu schema, data_nascimento é obrigatório (@db.Date sem '?').
-            // Então, null ou vazio aqui indicaria um erro de validação ou intenção.
+                   
             return res.status(400).json({ error: 'Data de nascimento não pode ser vazia ou nula na atualização.' });
         }
         const parsedDate = new Date(data_nascimento);
