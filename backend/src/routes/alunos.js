@@ -126,8 +126,7 @@ router.put('/:id', async (req, res) => {
     // Tratamento de semestre para UPDATE:
     if (semestre !== undefined) {
         if (semestre === null || semestre === '') {
-            // Se for null ou string vazia, e você quer que volte para o default (1) ou null
-            // No seu schema tem @default(1), então undefined faria isso.
+            
             dataToUpdate.semestre = undefined; // Deixa o default do DB agir se o Prisma suportar para updates
         } else {
             const parsedSemestre = parseInt(semestre);
