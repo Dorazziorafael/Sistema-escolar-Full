@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
 
     // Validação e tratamento de semestre:
     // Se o semestre não for fornecido, ou for vazio/nulo, ou não for um número válido,
-    // usamos 'undefined' para que o @default(1) do schema.prisma seja aplicado.
+    
     let semestreParaDB = undefined; // Valor padrão para usar o default do DB
     if (semestre !== undefined && semestre !== null && semestre !== '') {
         const parsedSemestre = parseInt(semestre);
