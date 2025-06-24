@@ -158,8 +158,7 @@ router.put('/:id', async (req, res) => {
             updateData.numero_semestres = parsedNumeroSemestres;
         }
     } else {
-        // Se numero_semestres NÃO for fornecido no body, não o inclua no updateData
-        // para que o Prisma não tente alterá-lo.
+       
     }
     
 
